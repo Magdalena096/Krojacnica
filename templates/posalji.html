@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+<title>Gotove narudžbe</title>
+
+    <link rel="stylesheet" href="">
+    <link rel="shortcut icon" href="icon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/      jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    #body1{
+      background-color : #1A1919;
+      background-image : url("static/styles/images/pregled.jpg");
+      background-position : center;
+      background-size : cover;
+    }
+    
+  </style>
+
+  </head>
+
+  <body id="body1">
+      
+<font size="4"><h1>Pošalji</h1></font>
+
+
+<form method="POST" name="vform">
+<font size="5">
+    <table border="1" id="tablica" bgcolor="white">
+        <thead>
+        <tr>
+      
+            <th>Adresa</th>
+            <th>Broj</th>
+      <th>Cijena</th>
+            <th>Dostava</th>
+      
+    
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in value %} 
+                <tr>
+                     <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+            <td>{{row[4]}}</td>
+        <td><button value={{row[0]}} name="oznaka1">Pošalji</button></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</font>
+</form>
+
+<br>
+
+
+
+<button onclick="location.href = '/';" id="myButton" class="float-left submit-button" >Početna</button>
+
+<button onclick="location.href = 'izmjeni';" id="myButton" class="float-left submit-button" >Izmjeni narudžbu</button>
+
+
+
+
+
+  </body>
+
+ 
+
+
+
+</html>
